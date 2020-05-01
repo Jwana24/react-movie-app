@@ -56,6 +56,7 @@ export default function MovieForm(){
                             onChange={handleChange}
                             type="text"
                             placeholder="Titre du film"
+                            required
                         />
                     </div>
                     <div className="ContainerInput">
@@ -65,6 +66,7 @@ export default function MovieForm(){
                             onChange={handleChange}
                             type="text"
                             placeholder="Url de l'image"
+                            required
                         />
                     </div>
                     <div className="ContainerTextarea">
@@ -74,6 +76,7 @@ export default function MovieForm(){
                             onChange={handleChange}
                             type="text"
                             placeholder="Votre message..."
+                            required
                         />
                     </div>
                 </fieldset>
