@@ -20,7 +20,7 @@ export default function MovieForm(){
     const handleChange = (e) => {
         setInputs({
             ...inputs,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value // "[name]" permet de signifier à React que l'on souhaite modifier plusieurs inputs
         });
     };
 
@@ -30,7 +30,7 @@ export default function MovieForm(){
         // on utilise axios pour submit le form
         Axios.post(url, inputs) // on donne une url et la data à envoyer
         .then(response => response.data)
-        .then(response => alert(`Film ajouté avec l'ID ${response.id} !`))
+        .then(response => alert(`Le film "${response.title}" a bien été ajouté avec l'ID ${response.id} !`))
         .catch(error => {
             console.log(error);
             alert(`Erreur lors de l'ajout du film : ${error.message}`);
