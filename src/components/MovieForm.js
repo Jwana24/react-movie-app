@@ -32,8 +32,10 @@ export default function MovieForm(){
         .then(response => response.data)
         .then(response => alert(`Le film "${response.title}" a bien été ajouté avec l'ID ${response.id} !`))
         .catch(error => {
-            console.log(error);
-            alert(`Erreur lors de l'ajout du film : ${error.message}`);
+            if(!inputs.title || !inputs.poster || !inputs.comment){
+                console.log(error);
+                alert(`Erreur lors de l'ajout du film : ${error.message}`);
+            }
         });
         // on clear les inputs après l'envoi du form
         setInputs({
