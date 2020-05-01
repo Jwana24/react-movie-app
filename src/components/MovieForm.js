@@ -7,12 +7,16 @@ import "./MovieForm.css";
 
 export default function MovieForm(){
 
+    // je crée un state général pour tous les inputs sous formes d'objet
+    // (en rapport avec les données renvoyées par l'API)
     const [ inputs, setInputs ] = useState({
         title:'',
         poster:'',
         comment:''
     });
 
+    // je modifie les données en rentrant dans l"objet (spread operateur)
+    // puis en targetant la valeur chaque input avec la saisie de l'utilisateur
     const handleChange = (e) => {
         setInputs({
             ...inputs,
@@ -24,13 +28,14 @@ export default function MovieForm(){
         e.preventDefault();
         const url = 'https://post-a-form.herokuapp.com/api/movies/';
         // on utilise axios pour submit le form
-        Axios.post(url, inputs)
+        Axios.post(url, inputs) // on donne une url et la data à envoyer
         .then(response => response.data)
         .then(response => alert(`Film ajouté avec l'ID ${response.id} !`))
         .catch(error => {
             console.log(error);
             alert(`Erreur lors de l'ajout du film : ${error.message}`);
         });
+        // on clear les inputs après l'envoi du form
         setInputs({
             title:'',
             poster:'',
@@ -68,7 +73,7 @@ export default function MovieForm(){
                             value={inputs.comment}
                             onChange={handleChange}
                             type="text"
-                            placeholder="Message"
+                            placeholder="Votre message..."
                         />
                     </div>
                 </fieldset>
