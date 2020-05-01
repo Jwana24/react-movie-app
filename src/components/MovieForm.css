@@ -1,0 +1,48 @@
+.Movieform h1{
+    text-align: center;
+}
+
+.Movieform .ContainerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Movieform fieldset{
+    padding: 45px;
+    border: 1px solid #bdc3c7;
+    width: 80%;
+}
+
+.Movieform .ContainerInput,
+.Movieform .ContainerTextarea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Movieform .ContainerInput input,
+.Movieform .ContainerTextarea textarea{
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.Movieform .ContainerTextarea textarea{
+    height: 40px;
+    font-family: Roboto;
+    font-size: .7rem;
+    resize: none;
+}
+
+.Movieform .ContainerSubmitButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
